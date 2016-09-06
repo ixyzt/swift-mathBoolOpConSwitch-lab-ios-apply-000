@@ -34,11 +34,15 @@ class ViewController: UIViewController {
     }
     
     func numberGenerator(a: String, b: Float) -> Float {
-        let stringToFloat = Float(a)
-        if (Float(1) < stringToFloat && Float(5) >= stringToFloat) && ((Float(10.5) < b && Float(15.0) >= b) || (Float(20.0) < b && Float(30.5) >= b)) {
-            return Float(stringToFloat!*b)
-        } else {
+        if a.containsString(".") {
             return Float(0)
+        } else {
+            let stringToFloat = Float(a)
+            if (Float(1) < stringToFloat && Float(5) >= stringToFloat) && ((Float(10.5) < b && Float(15.0) >= b) || (Float(20.0) < b && Float(30.5) >= b)) {
+                return Float(stringToFloat! * b)
+            } else {
+                return Float(0)
+            }
         }
     }
 
